@@ -57,6 +57,9 @@ sub vcl_recv {
 	}
 
     # Don't cache admin
+    if (req.http.Cookie ~ "(comment_author|wordpress_[a-f0-9]+|wp-postpass|wordpress_logged_in)") {
+    return (pass);
+  }
     if (req.url ~ "((wp-(login|admin|comments-post.php|cron.php))|login|timthumb|wrdp_files)" || req.url ~ "preview=true" || req.url ~ "xmlrpc.php") {
         return (pass);
     } else {
