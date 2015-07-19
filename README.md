@@ -28,7 +28,7 @@ This Playbook will setup:
 2. Add Ansible with `sudo add-apt-repository ppa:ansible/ansible`
 3. Update Apt with `sudo apt-get update && sudo apt-get upgrade`
 4. Install Git and Ansible with `sudo apt-get install ansible git`
-5. Clone this repository with `git clone https://github.com/zach-adams/hgv-deploy-full/`
+5. Clone this repository with `git clone https://github.com/dyrer/hgv-deploy-full/`
 6. Move into `hgv-deploy-full`
 7. Edit the `hosts` file and change `yourhostname.com` to your host name. If you have more than one website that you want to install on this server add each on a new line.
 8. Edit the name of `yourhostname.com` file in the `host_vars` folder to your hostname. If you have more than one website that you want to install on this server copy the current one and name it the hostname of the website.
