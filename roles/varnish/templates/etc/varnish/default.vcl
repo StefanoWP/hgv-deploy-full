@@ -19,6 +19,11 @@ sub vcl_recv {
 
 	# Add header for sending client ip to backend
 	set     req.http.X-Forwarded-For = client.ip;
+	
+	#Display admin bar
+	 if (req.http.Cookie ~ "(comment_author|wordpress_[a-f0-9]+|wp-postpass|wordpress_logged_in)") {
+    return (pass);
+  }
 
 	# Normalize     content-encoding
 	if (req.http.Accept-Encoding) {
